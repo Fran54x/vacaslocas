@@ -11,48 +11,18 @@ html {
 
 header h1,
 a {
+  color: white;
   background: #c3ba85;
+  font-family: "Forte", monospace;
+  font-weight: lighter;
   text-transform: capitalize;
   text-align: center;
-}
-
-/* Animación de enlaces para resoluciones mayores que dispositivos */
-.menu a:hover {
-  font-family: "Segoe UI", monospace;
-  align-items: center;
-  text-decoration: underline;
-  animation-fill-mode: both;
-  animation-duration: 0.5s;
-  animation-name: fantasma;
-  transition: fantasma 0.5s;
-}
-
-@keyframes fantasma {
-    100% {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-  
-  .menu a:active {
-    animation-duration: 0.1s;
-    animation-name: enlace_activo;
-  }
-  
-  @keyframes enlace_activo {
-    100% {
-      color: #575746;
-      text-decoration: underline;
-    }
 }
 
 /* Diseño para dispositivos moviles (ancho <= 640px) */
 @media all and (max-width: 640px) {
   header h1 {
-    color: white;
     font-size: 48px;
-    font-family: "Forte", monospace;
-    font-weight: lighter;
     padding-top: 0.5rem;
     padding-bottom: 0.8rem;
     text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
@@ -319,10 +289,7 @@ footer {
 /* Diseño para tabletas (ancho >= 640px && ancho <= 1024px ) */
 @media all and (min-width: 641px) and (max-width: 1023px){
     header h1 {
-      color: white;
       font-size: 52px;
-      font-family: "Forte", monospace;
-      font-weight: lighter;
       padding: 0.5rem 0 1rem;
       text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
       border-bottom: 3px solid #7f7f67;
@@ -598,11 +565,8 @@ footer {
 /* Diseño para computadoras (ancho >= 1024px) */
 @media all and (min-width: 1023px){
     header h1 {
-      color: white;
       font-size: 55px;
-      font-family: "Forte", monospace;
-      font-weight: lighter;
-      padding-top: 0.5rem;
+      padding: 0.5rem 0 1rem;
       text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
     }
   
@@ -614,22 +578,16 @@ footer {
   
     .menu a, ul {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
       background: #c3ba85;
       list-style: none;
-      font: 22px "Segoe UI", monospace;
+      font: 24px "Segoe UI", monospace;
       justify-content: space-between;
-  
-      /* prueba */
-      min-height: calc(100% - 4rem);
     }
   
     .menu a {
       font-weight: bold;
-      /* font-size: large; */
       color: #f0f0cb;
-      padding: 18px 16px;
+      padding: 18px 14px;
     }
   
     .menu ul {
@@ -637,15 +595,33 @@ footer {
     }
   
     .menu a:hover {
-      font-family: "Segoe UI", monospace;
-      align-items: center;
       text-decoration: underline;
       animation-fill-mode: both;
       animation-duration: 0.5s;
       animation-name: fantasma;
       transition: fantasma 0.5s;
     }
-  
+    
+    @keyframes fantasma {
+        100% {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+      
+      .menu a:active {
+        animation-duration: 0.15s;
+        animation-name: enlace_activo;
+      }
+      
+      @keyframes enlace_activo {
+        100% {
+          color: #575746;
+          background-color: #afa777;
+          text-decoration: underline;
+        }
+    }
+
     /* cuerpo de página */
     .contenido {
       justify-content: center;
@@ -703,9 +679,7 @@ footer {
       flex-direction: column;
     }
   
-    .promocion h2,
-    p,
-    span {
+    .promocion h2, p, span {
       text-align: center;
       background-color: rgba(0, 0, 0, 0);
       width: 100%;
