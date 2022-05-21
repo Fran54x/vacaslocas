@@ -1,0 +1,804 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #feffe2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header h1,
+a {
+  background: #c3ba85;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* Diseño para dispositivos moviles (ancho <= 640px) */
+@media all and (max-width: 640px) {
+  header h1 {
+    color: white;
+    font-size: 48px;
+    font-family: "Forte", monospace;
+    font-weight: lighter;
+    padding-top: 0.5rem;
+    text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  div.menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .menu a, ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #c3ba85;
+    list-style: none;
+    font: 22px "Segoe UI", monospace;
+    justify-content: space-between;
+  }
+
+  .menu a {
+    font-weight: bold;
+    font-size: 18px;
+    color: #f0f0cb;
+    padding: 10px 18px;
+  }
+
+  .menu ul {
+    padding: 0.5rem 1rem;
+  }
+
+  /* cuerpo de página */
+  .contenido {
+    justify-content: center;
+    width: 95%;
+    margin: 10px auto 20px;
+  }
+
+  .tarjeta {
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: -6px 5px 10px 4px rgba(0, 0, 0, 0.24);
+    border: 6px solid #c3ba85;
+    border-radius: 25px;
+  }
+
+  .tarjeta h3 {
+    background-color: white;
+    border-radius: 25px;
+  }
+
+  img{
+    width: 135px;
+  }
+
+  img.promocion{
+    border-radius: 25px 25px 0 0;
+    width: 280px;
+  }
+
+  div.promocion {
+    height: 200px;
+    background-color: #dad5ab;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border-top: 4px solid #c3ba85;
+    border-radius: 0 0 20px 20px;
+    margin: -2px -1px;
+  }
+
+  .centrar {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #tarjeta-promocion {
+    display: flex;
+    text-align: center;
+    width: 280px;
+    flex-wrap: wrap;
+  }
+
+  .centrar.horizontal {
+    flex-direction: row;
+  }
+
+  .centrar.vertical {
+    flex-direction: column;
+  }
+
+  .promocion h2, p, span {
+    margin-top: -20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    font-family: "Sitka Small", Courier;
+  }
+  .promocion p {
+    font-size: 20px;
+  }
+
+  .precio {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  span.promocion {
+    text-decoration: line-through;
+  }
+
+  .promocion h2 {
+    align-self: flex-start;
+    border: 2px solid #42240e;
+    font-family: "Forte", monospace;
+    border-radius: 0 25px 0 25px;
+    margin: 10px 10px 0;
+    font-size: 28px;
+  }
+
+  .medidas {
+    width: 200px;
+    height: 180px;
+  }
+
+  .subtitulos {
+    font-family: "Forte", monospace;
+    font-weight: lighter;
+    font-size: 30px;
+  }
+
+  div.linea_decorativa {
+    margin-top: 20px;
+    padding: 0 215px;
+    border: 10px solid #42240e;
+    border-radius: 25px;
+  }
+
+  h2.linea_decorativa {
+    margin: -34px auto 25px;
+    width: max-content;
+    font-size: 2.2rem;
+    padding: 0 15px;
+  }
+
+  h3.subtitulos {
+    font-size: 24px;
+    padding: 8px 6px;
+  }
+
+  h2.titulos {
+    text-align: center;
+    font-family: "Forte", monospace;
+    font-size: 2em;
+    font-weight: lighter;
+    margin: 30px 20px -100px;
+    padding: 10px 80px;
+    border: 5px solid #42240e;
+    border-radius: 0 25px 0 25px;
+    z-index: 5;
+  }
+
+  .ancla.extremos {
+    display: block;
+    content: " ";
+    margin-bottom: -90px;
+  }
+  div.ancla::before {
+    display: block;
+    content: " ";
+    padding-top: 130px;
+  }
+
+  .parrafos {
+    font-family: "Segoe UI", monospace;
+    font-weight: bold;
+    padding: 20px 16px;
+  }
+
+  .texto-cafe {
+    color: #42240e;
+    font-size: 17px;
+  }
+
+  .texto-blanco {
+    color: white;
+  }
+
+  .efecto {
+    will-change: transform;
+    transition: transform 0.5s;
+  }
+
+  a {
+    text-decoration: none;
+    background-color: white;
+  }
+
+  .efecto:hover {
+    transform: scale(106%);
+    will-change: transform;
+    transition: transform 0.5s;
+    /* cursor: pointer; */
+  }
+
+  .efecto:hover a {
+    will-change: transform;
+    transition: transform 2s;
+    cursor: pointer;
+  }
+
+  p.prueba {
+    height: 1000px;
+  }
+
+  img.prueba {
+    width: 120px;
+  }
+
+  /* pie de página */
+footer {
+    background-color: #42240e;
+    padding: 28px 20px 5px;
+    top: 200px;
+  }
+  
+  footer > p {
+    padding: 20px 0;
+    color: white;
+    font: 14px "Segoe UI", monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  p.direccion {
+    font-size: 17px;
+  }
+  
+  p.derechos-de-autor {
+    text-transform: capitalize;
+    font-size: 16px;
+  }  
+}
+
+/* Diseño para tabletas (ancho >= 640px && ancho <= 1024px ) */
+@media all and (min-width: 641px) and (max-width: 1023px){
+    header h1 {
+      color: white;
+      font-size: 48px;
+      font-family: "Forte", monospace;
+      font-weight: lighter;
+      padding-top: 0.5rem;
+      text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+    }
+  
+    div.menu {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+  
+    .menu a, ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      background: #c3ba85;
+      list-style: none;
+      font: 18px "Segoe UI", monospace;
+      justify-content: space-between;
+    }
+  
+    .menu a {
+      font-weight: bold;
+      /* font-size: large; */
+      color: #f0f0cb;
+      padding: 12px 16px;
+    }
+  
+    .menu ul {
+      padding: 0.5rem 2rem;
+    }
+  
+    /* cuerpo de página */
+    .contenido {
+      justify-content: center;
+      width: 95%;
+      margin: 10px auto 20px;
+    }
+  
+    .tarjeta {
+      margin: 30px auto;
+      background-color: white;
+      box-shadow: -6px 5px 10px 4px rgba(0, 0, 0, 0.24);
+      border: 6px solid #c3ba85;
+      border-radius: 25px;
+      min-zoom: 56%;
+    }
+  
+    .tarjeta h3 {
+      background-color: white;
+      border-radius: 25px;
+    }
+
+    img{
+      width: 145px;
+    }
+
+    img.promocion{
+      border-radius: 25px 0 0 25px;
+      width: 270px;
+    }
+  
+    div.promocion {
+      border: 3px solid #c3ba85;
+      width: 295px;
+      background-color: #dad5ab;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+      margin: 10px 10px 10px 0;
+      border-radius: 0 25px 0 25px;
+    }
+  
+    .centrar {
+      display: flex;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+  
+    #tarjeta-promocion {
+      display: flex;
+      width: auto;
+    }
+  
+    .centrar.horizontal {
+      flex-direction: row;
+    }
+  
+    .centrar.vertical {
+      flex-direction: column;
+    }
+  
+    .promocion h2, p, span {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0);
+      width: 100%;
+      font-family: "Sitka Small", Courier;
+    }
+    .promocion p {
+      margin: 6px;
+      font-size: 20px;
+    }
+    .precio {
+      font-size: 38px;
+      font-weight: bold;
+    }
+  
+    span.promocion {
+      text-decoration: line-through;
+    }
+  
+    .promocion h2 {
+      align-self: flex-start;
+      border: 3px solid #42240e;
+      font-family: "Forte", monospace;
+      border-radius: 0 25px 0 25px;
+      margin: 10px 10px 0;
+      font-size: 34px;
+    }
+  
+    .medidas {
+      width: 240px;
+      height: 206px;
+    }
+
+    .subtitulos {
+      font-family: "Forte", monospace;
+      font-weight: lighter;
+      font-size: 30px;
+    }
+  
+    div.linea_decorativa {
+      margin-top: 40px;
+      padding: 0;
+      border: 10px solid #42240e;
+      border-radius: 25px;
+    }
+  
+    h2.linea_decorativa {
+      margin: -45px auto 5px;
+      width: max-content;
+      font-size: 2.6rem;
+      padding: 5px 36px 30px;
+    }
+  
+    div.ancla::before {
+      display: block;
+      content: " ";
+      margin-top: 100px;
+    }
+  
+    h3.subtitulos {
+      font-size: 32px;
+      padding: 8px;
+    }
+  
+    h2.titulos {
+      text-align: center;
+      font-family: "Forte", monospace;
+      font-size: 2.6em;
+      font-weight: lighter;
+      margin: 25px 20px 0px;
+      padding: 5px;
+      border: 5px solid #42240e;
+      border-radius: 0 25px 0 25px;
+    }
+  
+    .parrafos {
+      font-family: "Segoe UI", monospace;
+      font-weight: bold;
+      padding: 10px 20px 30px;
+    }
+  
+    .texto-cafe {
+      color: #42240e;
+      font-size: 24px;
+    }
+  
+    .texto-blanco {
+      color: white;
+    }
+  
+    .efecto {
+      will-change: transform;
+      transition: transform 0.5s;
+    }
+  
+    a {
+      text-decoration: none;
+      background-color: white;
+    }
+  
+    .efecto:hover {
+      transform: scale(106%);
+      will-change: transform;
+      transition: transform 0.5s;
+      /* cursor: pointer; */
+    }
+  
+    .efecto:hover a {
+      will-change: transform;
+      transition: transform 2s;
+      cursor: pointer;
+    }
+  
+    p.prueba {
+      height: 1000px;
+    }
+  
+    img.prueba {
+      height: 140px;
+      width: 140px;
+    }
+  
+    /* pie de página */
+  footer {
+      background-color: #42240e;
+      padding: 30px 20px 20px;
+      top: 200px;
+    }
+    
+    footer > p {
+      padding: 10px;
+      color: white;
+      font: 16px "Segoe UI", monospace;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    
+    p.direccion {
+      font-size: 18px;
+    }
+    
+    p.derechos-de-autor {
+      text-transform: capitalize;
+      font-size: 18px;
+    }  
+}
+
+/* Diseño para computadoras (ancho >= 1024px) */
+@media all and (min-width: 1023px){
+    header h1 {
+      color: white;
+      font-size: 55px;
+      font-family: "Forte", monospace;
+      font-weight: lighter;
+      padding-top: 0.5rem;
+      text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+    }
+  
+    div.menu {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+  
+    .menu a,
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      background: #c3ba85;
+      list-style: none;
+      font: 22px "Segoe UI", monospace;
+      justify-content: space-between;
+  
+      /* prueba */
+      min-height: calc(100% - 4rem);
+    }
+  
+    .menu a {
+      font-weight: bold;
+      /* font-size: large; */
+      color: #f0f0cb;
+      padding: 18px 16px;
+    }
+  
+    .menu ul {
+      padding: 0.5rem 3rem;
+    }
+  
+    .menu a:hover {
+      font-family: "Segoe UI", monospace;
+      align-items: center;
+      text-decoration: underline;
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+      animation-name: fantasma;
+      transition: fantasma 0.5s;
+    }
+  
+    /* cuerpo de página */
+    .contenido {
+      justify-content: center;
+      width: 95%;
+      margin: 10px auto;
+    }
+  
+    .tarjeta {
+      margin: 30px auto;
+      background-color: white;
+      box-shadow: -6px 5px 10px 4px rgba(0, 0, 0, 0.24);
+      border: 6px solid #c3ba85;
+      border-radius: 25px;
+      min-zoom: 56%;
+    }
+  
+    .tarjeta h3 {
+      background-color: white;
+      border-radius: 25px;
+    }
+  
+    img {
+      border-radius: 25px;
+    }
+  
+    div.promocion {
+      border: 3px solid #c3ba85;
+      width: 350px;
+      background-color: #dad5ab;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+      margin: 10px 10px 10px 0;
+      border-radius: 0 25px 0 25px;
+    }
+  
+    .centrar {
+      display: flex;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+  
+    #tarjeta-promocion {
+      display: flex;
+      text-align: center;
+      min-width: min-content;
+      width: max-content;
+      max-width: max-content;
+      flex-wrap: wrap;
+    }
+  
+    .centrar.horizontal {
+      flex-direction: row;
+    }
+  
+    .centrar.vertical {
+      flex-direction: column;
+    }
+  
+    .promocion h2,
+    p,
+    span {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0);
+      width: 100%;
+      font-family: "Sitka Small", Courier;
+    }
+  
+    span.promocion {
+      text-decoration: line-through;
+    }
+  
+    .promocion h2 {
+      align-self: flex-start;
+      border: 3px solid #42240e;
+      font-family: "Forte", monospace;
+      border-radius: 0 25px 0 25px;
+      margin: 22px 22px 0;
+      font-size: 38px;
+    }
+  
+    .medidas {
+      width: 380px;
+      height: 310px;
+    }
+  
+    .medidas_promocion {
+      max-width: 70%;
+      max-height: 100%;
+      min-block-size: 200px;
+    }
+  
+    .subtitulos {
+      font-family: "Forte", monospace;
+      font-weight: lighter;
+      font-size: 30px;
+    }
+  
+    div.linea_decorativa {
+      margin-top: 40px;
+      padding: 0;
+      border: 10px solid #42240e;
+      border-radius: 25px;
+    }
+  
+    h2.linea_decorativa {
+      margin: -50px auto 5px;
+      width: max-content;
+      font-size: 3rem;
+      padding: 5px 75px 30px;
+    }
+  
+    div.ancla::before {
+      display: block;
+      content: " ";
+      margin-top: 100px;
+    }
+  
+    h3.subtitulos {
+      font-size: 32px;
+      padding: 8px;
+    }
+  
+    h2.titulos {
+      text-align: center;
+      font-family: "Forte", monospace;
+      font-size: 3em;
+      font-weight: lighter;
+      margin: 25px 20px 0;
+      padding: 10px;
+      border: 5px solid #42240e;
+      border-radius: 0 25px 0 25px;
+    }
+  
+    .parrafos {
+      font-family: "Segoe UI", monospace;
+      font-weight: bold;
+      padding: 20px 60px 50px;
+    }
+  
+    .texto-cafe {
+      color: #42240e;
+      font-size: 25px;
+    }
+  
+    .texto-blanco {
+      color: white;
+    }
+  
+    .precio {
+      font-size: 54px;
+      font-weight: bold;
+    }
+  
+    .efecto {
+      will-change: transform;
+      transition: transform 0.5s;
+    }
+  
+    a {
+      text-decoration: none;
+      background-color: white;
+    }
+  
+    .efecto:hover {
+      transform: scale(106%);
+      will-change: transform;
+      transition: transform 0.5s;
+      /* cursor: pointer; */
+    }
+  
+    .efecto:hover a {
+      will-change: transform;
+      transition: transform 2s;
+      cursor: pointer;
+    }
+  
+    p.prueba {
+      height: 1000px;
+    }
+  
+    img.prueba {
+      height: 230px;
+      width: 230px;
+    }
+  
+    /* pie de página */
+  footer {
+      background-color: #42240e;
+      padding: 40px;
+      top: 200px;
+    }
+    
+    footer > p {
+      padding: 5px;
+      color: white;
+      font: 18px "Segoe UI", monospace;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    
+    p.direccion {
+      font-size: 22px;
+    }
+    
+    p.derechos-de-autor {
+      text-transform: capitalize;
+      font-size: 20px;
+    }  
+}
+
+.menu a:hover {
+  font-family: "Segoe UI", monospace;
+  align-items: center;
+  text-decoration: underline;
+  animation-fill-mode: both;
+  animation-duration: 0.5s;
+  animation-name: fantasma;
+  transition: fantasma 0.5s;
+}
+
+@keyframes fantasma {
+    100% {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+  
+  .menu a:active {
+    animation-duration: 0.1s;
+    animation-name: enlace_activo;
+  }
+  
+  @keyframes enlace_activo {
+    100% {
+      color: #575746;
+      text-decoration: underline;
+    }
+}
